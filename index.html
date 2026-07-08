@@ -3,151 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محب المهدی | انسان چندبعدی</title>
-    <link href="https://cdn.jsdelivr.net/gh/rastikara/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <title>محب المهدی | رزومه حرفه‌ای</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikara/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-green: #20c997;
+            --dark-text: #212529;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
         body { 
-            background-color: #0b0e14; 
-            color: #e0e0e0; 
             font-family: 'Vazirmatn', sans-serif; 
-            overflow-x: hidden;
+            color: var(--dark-text);
+            background-color: var(--white);
+            scroll-behavior: smooth;
         }
-        .hero-section { 
+        .navbar { 
+            background: var(--white); 
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+            padding: 15px 0;
+        }
+        .navbar-brand { font-size: 1.5rem; font-weight: 800; color: var(--dark-text) !important; }
+        .nav-link { 
+            color: var(--dark-text) !important; 
+            font-weight: 500; 
+            margin: 0 10px; 
+            transition: 0.3s;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--primary-green) !important; }
+        .hero { 
             padding: 120px 0; 
+            background: linear-gradient(135deg, #ffffff 0%, #f1fdfa 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero h1 { font-size: 3.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .accent { color: var(--primary-green); }
+        .hero-img { 
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+            background: var(--primary-green); 
+            width: 450px;
+            height: 550px;
+            object-fit: cover;
+            border: 10px solid white;
+            box-shadow: 0 20px 40px rgba(32, 201, 151, 0.3);
+        }
+        .stat-card { 
             text-align: center; 
-            background: radial-gradient(circle at center, #1a2230 0%, #0b0e14 100%);
-            animation: fadeIn 1.5s ease-in;
-        }
-        .accent-color { color: #00d4ff; text-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
-        .manifesto { 
-            font-size: 1.1rem; 
-            line-height: 2.2; 
-            max-width: 800px; 
-            margin: 40px auto; 
             padding: 30px; 
-            border-right: 5px solid #00d4ff; 
-            background: rgba(22, 27, 34, 0.8); 
-            border-radius: 0 15px 15px 0;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .card-custom { 
-            background: rgba(22, 27, 34, 0.6); 
-            border: 1px solid #30363d; 
             border-radius: 20px; 
-            padding: 30px; 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            height: 100%; 
-            backdrop-filter: blur(5px);
+            background: var(--white); 
+            transition: 0.4s; 
+            border: 1px solid rgba(0,0,0,0.05);
         }
-        .card-custom:hover { 
-            border-color: #00d4ff; 
+        .stat-card:hover { 
             transform: translateY(-10px); 
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
-            background: rgba(22, 27, 34, 0.9);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+            border-color: var(--primary-green);
         }
-        .pill-tag { 
-            background: #1f2937; 
-            color: #00d4ff; 
-            padding: 6px 14px; 
+        .stat-number { font-size: 2.8rem; font-weight: 800; color: var(--primary-green); }
+        .service-card { 
+            border: none; 
+            border-radius: 25px; 
+            padding: 40px; 
+            background: var(--white); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            transition: 0.4s; 
+            height: 100%; 
+            text-align: center;
+            border-bottom: 5px solid transparent;
+        }
+        .service-card:hover { 
+            background: var(--primary-green); 
+            color: var(--white); 
+            transform: translateY(-10px);
+            border-bottom: 5px solid #19a17a;
+        }
+        .service-card i { 
+            font-size: 3.5rem; 
+            color: var(--primary-green); 
+            margin-bottom: 25px; 
+            transition: 0.3s;
+        }
+        .service-card:hover i { color: var(--white); }
+        .section-title { position: relative; margin-bottom: 60px; text-align: center; }
+        .section-title h2 { font-weight: 800; font-size: 2.5rem; display: inline-block; position: relative; }
+        .section-title h2::after { 
+            content: ''; position: absolute; width: 60px; height: 5px; 
+            background: var(--primary-green); bottom: -10px; left: 50%; 
+            transform: translateX(-50%); border-radius: 5px;
+        }
+        .btn-green { 
+            background: var(--primary-green); 
+            color: var(--white); 
             border-radius: 50px; 
-            font-size: 0.8rem; 
-            margin: 4px; 
-            display: inline-block; 
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            transition: 0.3s;
-        }
-        .pill-tag:hover { background: #00d4ff; color: #0b0e14; }
-        .social-links a {
-            color: #e0e0e0;
-            font-size: 1.5rem;
-            margin: 0 15px;
-            transition: 0.3s;
+            padding: 12px 35px; 
+            font-weight: bold; 
+
+هوش مصنوعی:             border: none; 
+            transition: 0.3s; 
             text-decoration: none;
+            display: inline-block;
         }
-        .social-links a:hover { color: #00d4ff; transform: scale(1.2); }
-        footer { 
-            padding: 60px 0; 
-            border-top: 1px solid #30363d; 
-            text-align: center; 
-            background: #0b0e14;
+        .btn-green:hover { background: #19a17a; color: var(--white); transform: scale(1.05); }
+        .contact-box { 
+            background: var(--white); 
+            border-radius: 30px; 
+            padding: 50px; 
+            border-right: 12px solid var(--primary-green); 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .contact-item { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+            margin-bottom: 25px; 
+            text-decoration: none; 
+            color: var(--dark-text); 
+            transition: 0.3s; 
+            font-size: 1.1rem;
         }
+        .contact-item:hover { color: var(--primary-green); transform: translateX(-10px); }
+        .contact-item i { font-size: 1.8rem; color: var(--primary-green); width: 40px; text-align: center; }
+        footer { background: #f1fdfa; padding: 30px 0; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
 
-<section class="hero-section">
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-        <h1 class="display-3 fw-bold accent-color">محب المهدی</h1>
-        <p class="lead mt-3" style="opacity: 0.8;">متخصص AI و امنیت اطلاعات | مربی هنرهای رزمی | پژوهشگر ادیان و روانشناسی</p>
-        <div class="manifesto">
-            «وقتی اراده و خرد انسانی، فراتر از محاسبات ماشین و هوش مصنوعی می‌رود و ظرفیت‌های نهفته ذهن را فعال می‌کند، انسان از محدودیت‌های تک‌بعدی رها شده و به <strong style="color: #00d4ff;">"انسان چندبعدی"</strong> تبدیل می‌شود؛ کسی که در تلاقی ورزش، خرد و تکنولوژی، به تکامل می‌رسد.»
+        <a class="navbar-brand" href="#">محب <span class="accent" style="color: var(--primary-green);">المهدی</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link active" href="#home">خانه</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">درباره من</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">خدمات</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">تماس</a></li>
+            </ul>
+            <a href="mailto:Mohebalmahdi81@gmail.com" class="btn btn-green">همکاری با من</a>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+                <h5 class="text-uppercase mb-3" style="letter-spacing: 2px; color: #666;">متخصص AI و امنیت</h5>
+                <h1 class="mb-3">محب <span class="accent">المهدی</span></h1>
+                <h3 class="mb-4">پتانسیل‌های انسانی و تکنولوژی</h3>
+                <p class="lead mb-5 text-muted">تلفیقی از دانش مدرن تکنولوژی، خرد ادیان و قدرت هنرهای رزمی. من به دنبال خلق راه‌حل‌های هوشمند برای چالش‌های پیچیده هستم.</p>
+                <div class="d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center gap-4">
+                    <a href="#contact" class="btn btn-green">ارتباط با من</a>
+                    <div class="social-links d-flex gap-3">
+                        <a href="https://instagram.com/a_parsa69" target="_blank" class="text-dark"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://t.me/mohebalmahdi81" target="_blank" class="text-dark"><i class="fab fa-telegram fa-lg"></i></a>
+                        <a href="mailto:Mohebalmahdi81@gmail.com" class="text-dark"><i class="fas fa-envelope fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center mb-5 mb-lg-0">
+                <img src="https://via.placeholder.com/500x600/20c997/ffffff?text=Your+Photo" alt="Mohib" class="img-fluid hero-img shadow-lg">
+            </div>
         </div>
     </div>
 </section>
 
-<div class="container my-5">
-    <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-            <div class="card-custom">
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
 
-هوش مصنوعی:                 <h4 class="accent-color"><i class="fas fa-laptop-code me-2"></i> تکنولوژی و AI</h4>
-                <div class="mt-3">
-                    <span class="pill-tag">هوش مصنوعی (AI)</span>
-                    <span class="pill-tag">امنیت اطلاعات</span>
-                    <span class="pill-tag">مهندسی نرم‌افزار</span>
-                    <span class="pill-tag">متخصص IT</span>
+هوش مصنوعی:                     <div class="stat-number">۵+</div>
+                    <div class="text-muted">سال تجربه AI</div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="card-custom">
-                <h4 class="accent-color"><i class="fas fa-user-ninja me-2"></i> قدرت و جسم</h4>
-                <div class="mt-3">
-                    <span class="pill-tag">مربیگری جودو و کاراته</span>
-                    <span class="pill-tag">کشتی آزاد</span>
-                    <span class="pill-tag">دفاع شخصی</span>
-                    <span class="pill-tag">مربیگری شنا</span>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">۵۰+</div>
+                    <div class="text-muted">پروژه موفق</div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="card-custom">
-                <h4 class="accent-color"><i class="fas fa-brain me-2"></i> ذهن و روح</h4>
-                <div class="mt-3">
-                    <span class="pill-tag">روانشناسی خانواده</span>
-                    <span class="pill-tag">مشاوره ازدواج</span>
-                    <span class="pill-tag">متخصص ادیان و فرق</span>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">۱۵+</div>
+                    <div class="text-muted">حکم ورزشی</div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-            <div class="card-custom">
-                <h4 class="accent-color"><i class="fas fa-gem me-2"></i> تخصص‌های ویژه</h4>
-                <div class="mt-3">
-                    <span class="pill-tag">کارشناس طلا و نقره</span>
-                    <span class="pill-tag">تحلیلگر سیستم</span>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <div class="stat-number">۱۰۰٪</div>
+                    <div class="text-muted">رضایت کلاینت</div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<footer>
-    <div class="social-links mb-4">
-        <a href="https://t.me/mohebalmahdi81" target="_blank"><i class="fab fa-telegram"></i></a>
-        <a href="https://instagram.com/saleh__248" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/ali-moheb-almahdi-961945419?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="fab fa-linkedin"></i></a>
+<section id="services" class="py-5">
+    <div class="container py-5">
+        <div class="section-title">
+            <h2>خدمات تخصصی</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>هوش مصنوعی</h4>
+                    <p class="text-muted">طراحی و توسعه مدل‌های یادگیری ماشین و پردازش داده‌های حجیم برای بهینه‌سازی کسب‌وکار.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>امنیت اطلاعات</h4>
+                    <p class="text-muted">تست نفوذ، امنیت شبکه و حفاظت از داده‌های حساس در برابر حملات سایبری.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-user-ninja"></i>
+                    <h4>آموزش رزمی</h4>
+                    <p class="text-muted">مربیگری تخصصی جودو، کاراته و دفاع شخصی برای ارتقای قدرت بدنی و ذهنی.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <p class="mb-0">طراحی شده توسط محب المهدی - ۲۰۲۶</p>
-    <p style="font-size: 0.8rem; opacity: 0.5;">این آغاز مسیر یک انسان چندبعدی است...</p>
+</section>
+
+<section id="contact" class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="section-title">
+            <h2>ارتباط با من</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="contact-box shadow-sm">
+                    <a href="mailto:Mohebalmahdi81@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div><strong>ایمیل:</strong> Mohebalmahdi81@gmail.com</div>
+                    </a>
+                    <a href="https://t.me/mohebalmahdi81" target="_blank" class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <div><strong>تلگرام:</strong> @mohebalmahdi81</div>
+                    </a>
+                    <a href="https://instagram.com/a_parsa69" target="_blank" class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <div><strong>اینستاگرام:</strong> a_parsa69</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center">
+    <div class="container">
+        <p class="mb-0 text-muted">© ۲۰۲۶ محب المهدی - تمامی حقوق محفوظ است.</p>
+    </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
