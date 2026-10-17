@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+<title id="title">لوگوی محب‌المهدی</title><desc id="desc">نشان هندسی سبز با حرف م و ستاره الهام‌گرفته از نور</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7ffd0"/><stop offset=".55" stop-color="#65f39c"/><stop offset="1" stop-color="#15975b"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="10" y="10" width="280" height="280" rx="62" fill="#091710" stroke="#28543a" stroke-width="2"/>
+<path d="M150 28 168 76 216 58 198 106 246 124 198 142 216 190 168 172 150 220 132 172 84 190 102 142 54 124 102 106 84 58 132 76Z" fill="#163923" opacity=".65"/>
+<path d="M80 91H220V112H103V143H190V164H103V202H80Z" fill="none" stroke="url(#g)" stroke-width="11" stroke-linejoin="round" filter="url(#glow)"/>
+<path d="M122 91V202M122 143H190M220 91V202" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
+<path d="M150 36 157 56 178 57 161 70 167 91 150 79 133 91 139 70 122 57 143 56Z" fill="#b7ffd0"/>
+<circle cx="150" cy="245" r="4" fill="#72f5a7"/><path d="M113 245H137M163 245H187" stroke="#4dbd77" stroke-width="2" stroke-linecap="round"/>
+</svg>
